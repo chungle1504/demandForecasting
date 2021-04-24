@@ -26,70 +26,8 @@ function Dashboard() {
     <>
       <Container fluid>
         <Row>
-          <Col lg="5" sm="5">
-            <Card className="card-stats">
-              {/* <Card.Body>
-                <Row>
-                  <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-chart text-warning"></i>
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Number</p>
-                      <Card.Title as="h4">150GB</Card.Title>
-                    </div>
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
-                </div>
-              </Card.Footer> */}
-              <FormGroup controlId="date" bsSize="large">
-                <FormControl
-                  type="date"
-                />
-              </FormGroup>
-            </Card>
-          </Col>
-          <Col lg="5" sm="5">
-            <Card className="card-stats">
-              {/* <Card.Body>
-                <Row>
-                  <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-light-3 text-success"></i>
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Revenue</p>
-                      <Card.Title as="h4">$ 1,345</Card.Title>
-                    </div>
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="far fa-calendar-alt mr-1"></i>
-                  Last day
-                </div>
-              </Card.Footer> */}
-              <FormGroup controlId="date" bsSize="large">
-                <FormControl
-                  type="date"
-                />
-              </FormGroup>
-            </Card>
-          </Col>
-          <Col lg="2" sm="2">
-            <Card className="card-stats">
+          <Col lg="3" sm="3">
+            {/* <Card className="card-stats"> 
               <Card.Body>
                 <Row>
                   <Col xs="5">
@@ -112,7 +50,89 @@ function Dashboard() {
                   Update Now
                 </div>
               </Card.Footer>
-            </Card>
+            </Card> */}
+            <FormGroup controlId="date" bsSize="large">
+              <label>City</label>
+              <FormControl
+                type="date"
+              />
+            </FormGroup>
+          </Col>
+          <Col lg="3" sm="3">
+            {/* <Card className="card-stats">
+              <Card.Body>
+                <Row>
+                  <Col xs="5">
+                    <div className="icon-big text-center icon-warning">
+                      <i className="nc-icon nc-light-3 text-success"></i>
+                    </div>
+                  </Col>
+                  <Col xs="7">
+                    <div className="numbers">
+                      <p className="card-category">Revenue</p>
+                      <Card.Title as="h4">$ 1,345</Card.Title>
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+              <Card.Footer>
+                <hr></hr>
+                <div className="stats">
+                  <i className="far fa-calendar-alt mr-1"></i>
+                  Last day
+                </div>
+              </Card.Footer>
+            </Card> */}
+            <FormGroup controlId="date" bsSize="large">
+            <label>City</label>
+              <FormControl
+                type="date"
+              />
+            </FormGroup>
+          </Col>
+          <Col lg="4" sm="4">
+            <Form.Group>
+              <label>City</label>
+              <Form.Control
+                defaultValue="Mike"
+                placeholder="City"
+                type="text"
+              ></Form.Control>
+            </Form.Group>
+          </Col>
+          <Col lg="2" sm="2">
+            {/* <Card className="card-stats">
+              <Card.Body>
+                <Row>
+                  <Col xs="5">
+                    <div className="icon-big text-center icon-warning">
+                      <i className="nc-icon nc-chart text-warning"></i>
+                    </div>
+                  </Col>
+                  <Col xs="7">
+                    <div className="numbers">
+                      <p className="card-category">Number</p>
+                      <Card.Title as="h4">150GB</Card.Title>
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+              <Card.Footer>
+                <hr></hr>
+                <div className="stats">
+                  <i className="fas fa-redo mr-1"></i>
+                  Update Now
+                </div>
+              </Card.Footer>
+            </Card> */}
+            <Button 
+              className="btn-fill pull-right"
+              type="submit"
+              variant="info"
+              style={{marginTop:"30px"}}
+            >
+              Predict
+            </Button>
           </Col>
           {/* <Col lg="3" sm="6">
             <Card className="card-stats">
