@@ -1,5 +1,8 @@
 import React from "react";
 import ChartistGraph from "react-chartist";
+import DistributedColumns from './Chart/DistributedColumns';
+import Pie from './Chart/Pie';
+
 // react-bootstrap components
 import {
   Badge,
@@ -14,6 +17,8 @@ import {
   Form,
   OverlayTrigger,
   Tooltip,
+  FormGroup,
+  FormControl,
 } from "react-bootstrap";
 
 function Dashboard() {
@@ -23,7 +28,7 @@ function Dashboard() {
         <Row>
           <Col lg="5" sm="5">
             <Card className="card-stats">
-              <Card.Body>
+              {/* <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
@@ -44,12 +49,17 @@ function Dashboard() {
                   <i className="fas fa-redo mr-1"></i>
                   Update Now
                 </div>
-              </Card.Footer>
+              </Card.Footer> */}
+              <FormGroup controlId="date" bsSize="large">
+                <FormControl
+                  type="date"
+                />
+              </FormGroup>
             </Card>
           </Col>
           <Col lg="5" sm="5">
             <Card className="card-stats">
-              <Card.Body>
+              {/* <Card.Body>
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
@@ -70,7 +80,12 @@ function Dashboard() {
                   <i className="far fa-calendar-alt mr-1"></i>
                   Last day
                 </div>
-              </Card.Footer>
+              </Card.Footer> */}
+              <FormGroup controlId="date" bsSize="large">
+                <FormControl
+                  type="date"
+                />
+              </FormGroup>
             </Card>
           </Col>
           <Col lg="2" sm="2">
@@ -233,8 +248,8 @@ function Dashboard() {
                 <p className="card-category">Date</p>
               </Card.Header>
               <Card.Body>
-                <div className="ct-chart" id="chartActivity">
-                  <ChartistGraph
+                <div className="ct-chart" id="chartActivity" style={{minHeight:"330px"}}>
+                  {/* <ChartistGraph
                     data={{
                       labels: [
                         "Product's Name",
@@ -302,10 +317,11 @@ function Dashboard() {
                         },
                       ],
                     ]}
-                  />
+                  /> */}
+                  <DistributedColumns></DistributedColumns>
                 </div>
               </Card.Body>
-              <Card.Footer>
+              {/* <Card.Footer>
                 <div className="legend">
                   <i className="fas fa-circle text-info"></i>
                   Tesla Model S <i className="fas fa-circle text-danger"></i>
@@ -316,7 +332,7 @@ function Dashboard() {
                   <i className="fas fa-check"></i>
                   Data information certified
                 </div>
-              </Card.Footer>
+              </Card.Footer> */}
             </Card>
           </Col>
           <Col md="4">
@@ -329,26 +345,28 @@ function Dashboard() {
                 <div
                   className="ct-chart ct-perfect-fourth"
                   id="chartPreferences"
+                  style={{minHeight:"330px"}}
                 >
-                  <ChartistGraph
+                  {/* <ChartistGraph
                     data={{
                       labels: ["40%", "20%", "40%"],
                       series: [40, 20, 40],
                     }}
                     type="Pie"
-                  />
+                  /> */}
+                  <Pie></Pie>
                 </div>
-                <div className="legend">
+                {/* <div className="legend">
                   <i className="fas fa-circle text-info"></i>
                   Open <i className="fas fa-circle text-danger"></i>
                   Bounce <i className="fas fa-circle text-warning"></i>
                   Unsubscribe
-                </div>
-                <hr></hr>
+                </div> */}
+                {/* <hr></hr>
                 <div className="stats">
                   <i className="far fa-clock"></i>
                   Campaign sent 2 days ago
-                </div>
+                </div> */}
               </Card.Body>
             </Card>
           </Col>
