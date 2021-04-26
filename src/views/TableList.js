@@ -21,7 +21,7 @@ function TableList() {
           <Col md="12">
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
-                <Card.Title as="h4">Striped Table with Hover</Card.Title>
+                <Card.Title as="h4">Striped Tafdsfa r</Card.Title>
                 <p className="card-category">
                   Here is a subtitle for this table
                 </p>

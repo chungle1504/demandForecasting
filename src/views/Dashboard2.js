@@ -156,38 +156,79 @@ function Dashboard() {
               </Card.Footer>
             </Card> */}
             <FormGroup controlId="date" bsSize="large">
-              <label>Select Start Date</label>
+              <label>City</label>
               <FormControl
                 type="date"
               />
             </FormGroup>
           </Col>
           <Col lg="3" sm="3">
+            {/* <Card className="card-stats">
+              <Card.Body>
+                <Row>
+                  <Col xs="5">
+                    <div className="icon-big text-center icon-warning">
+                      <i className="nc-icon nc-light-3 text-success"></i>
+                    </div>
+                  </Col>
+                  <Col xs="7">
+                    <div className="numbers">
+                      <p className="card-category">Revenue</p>
+                      <Card.Title as="h4">$ 1,345</Card.Title>
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+              <Card.Footer>
+                <hr></hr>
+                <div className="stats">
+                  <i className="far fa-calendar-alt mr-1"></i>
+                  Last day
+                </div>
+              </Card.Footer>
+            </Card> */}
             <FormGroup controlId="date" bsSize="large">
-            <label>Select End Date</label>
+            <label>City</label>
               <FormControl
                 type="date"
               />
             </FormGroup>
           </Col>
-          <Col lg="2" sm="2">
-          <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label>Select Store</Form.Label>
-            <Form.Control as="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </Form.Control>
-          </Form.Group>
+          <Col lg="4" sm="4">
+            <Form.Group>
+              <label>City</label>
+              <Form.Control
+                defaultValue="Mike"
+                placeholder="City"
+                type="text"
+              ></Form.Control>
+            </Form.Group>
           </Col>
           <Col lg="2" sm="2">
+            {/* <Card className="card-stats">
+              <Card.Body>
+                <Row>
+                  <Col xs="5">
+                    <div className="icon-big text-center icon-warning">
+                      <i className="nc-icon nc-chart text-warning"></i>
+                    </div>
+                  </Col>
+                  <Col xs="7">
+                    <div className="numbers">
+                      <p className="card-category">Number</p>
+                      <Card.Title as="h4">150GB</Card.Title>
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+              <Card.Footer>
+                <hr></hr>
+                <div className="stats">
+                  <i className="fas fa-redo mr-1"></i>
+                  Update Now
+                </div>
+              </Card.Footer>
+            </Card> */}
             <Button 
               className="btn-fill pull-right"
               type="submit"
@@ -198,8 +239,8 @@ function Dashboard() {
             </Button>
           </Col>
         </Row>
-        {/* endRow
-        Chart */}
+        //endRow
+        //chart
         <Row>
           <Col md="8">
             <Card>
@@ -268,32 +309,60 @@ function Dashboard() {
                   Here is a subtitle for this table
                 </p>
               </Card.Header>
-              {/* {sampleData.forEach(element => {
-                <h1>abcdef</h1>
-              })} */}
               <Card.Body className="table-full-width table-responsive px-0">
-                {/* TABLE */}
                 <Table className="table-hover table-striped">
-                  {sampleData.map((element, i) => {
-                    
-                  })}
                   <thead>
                     <tr>
-                      <th className="border-0">Id</th>
-                      <th className="border-0">Item</th>
-                      <th className="border-0">Store</th>
-                      <th className="border-0">Sales</th>
+                      <th className="border-0">ID</th>
+                      <th className="border-0">Name</th>
+                      <th className="border-0">Salary</th>
+                      <th className="border-0">Country</th>
+                      <th className="border-0">City</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {sampleData.map((element, i) => {
-                      return(<tr>
-                        <td>{element.id}</td>
-                        <td>{element.item}</td>
-                        <td>{element.store}</td>
-                        <td>{element.sales}</td>
-                      </tr>);
-                    })}
+                    <tr>
+                      <td>1</td>
+                      <td>Dakota Rice</td>
+                      <td>$36,738</td>
+                      <td>Niger</td>
+                      <td>Oud-Turnhout</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Minerva Hooper</td>
+                      <td>$23,789</td>
+                      <td>Curaçao</td>
+                      <td>Sinaai-Waas</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Sage Rodriguez</td>
+                      <td>$56,142</td>
+                      <td>Netherlands</td>
+                      <td>Baileux</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Philip Chaney</td>
+                      <td>$38,735</td>
+                      <td>Korea, South</td>
+                      <td>Overland Park</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Doris Greene</td>
+                      <td>$63,542</td>
+                      <td>Malawi</td>
+                      <td>Feldkirchen in Kärnten</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Mason Porter</td>
+                      <td>$78,615</td>
+                      <td>Chile</td>
+                      <td>Gloucester</td>
+                    </tr>
                   </tbody>
                 </Table>
               </Card.Body>
