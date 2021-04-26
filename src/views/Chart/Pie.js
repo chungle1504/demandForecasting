@@ -38,7 +38,7 @@ class Pie extends Component {
               series={this.state.series}
               type="pie"
               width="400"
-              style={{marginLeft:"-13px"}}
+              style={{marginLeft:"-15px", marginTop:"20px"}}
             />
           </div>
         </div>
