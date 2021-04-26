@@ -3,8 +3,11 @@
   "version": "2.0.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
+    "apexcharts": "^3.26.1",
+    "axios": "^0.21.1",
     "bootstrap": "4.6.0",
     "chartist": "0.10.1",
+    "cors": "^2.8.5",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "node-sass": "4.14.1",
