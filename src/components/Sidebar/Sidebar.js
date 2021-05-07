@@ -48,8 +48,8 @@ function Sidebar({ color, image, routes }) {
               />
             </div>
           </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            Creative Tim
+          <a className="simple-text" href="http://localhost:3000/admin/chucnang1">
+            Sale Forcasting
           </a>
         </div>
         <Nav>
