@@ -36,18 +36,27 @@ function Dashboard() {
 
   const fetchData = () => {
     console.log('fetch');
-    return getData(store, startDate, endDate).then(data => {
-      const cate = data.map(d => d.item).filter((e, i, arr) => {
-        return arr.indexOf(e) === i
-      })
-      setCateArr(cate);
-      return getResult();
-    }).then(result => {
-      setDataArr(result.map(d => d.sales_sum).filter(e => e !== null))
-      console.log('done');
+    // return getData(store, startDate, endDate).then(data => {
+    //   const cate = data.map(d => d.item).filter((e, i, arr) => {
+    //     return arr.indexOf(e) === i
+    //   })
+    //   console.log(data.map(d => d.item));
+    //   setCateArr(cate);
+    //   return getResult();
+    // }).then(result => {
+    //   setDataArr(result.map(d => d.sales_sum).filter(e => e !== null))
+    //   console.log('done');
+    // }).catch(err => {
+    //   alert(err.message);
+    // })
+    getData(store, startDate, endDate).then(result => {
+      result = result.filter(e => e.sales_sum !== null);
+      console.log(result);
+      setCateArr(result.map(d => d.id));
+      setDataArr(result.map(d => d.sales_sum));
     }).catch(err => {
-      alert(err.message);
-    })
+        alert(err.message);
+    });
   }
   useEffect(async () => {
     fetchData();
