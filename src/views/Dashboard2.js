@@ -1,7 +1,7 @@
 import DistributedColumns from './Chart/DistributedColumns';
 import LineGraph from './Chart/LineGraph';
 import React, { useState, useEffect } from 'react';
-
+import * as moment from 'moment'
 
 // react-bootstrap components
 import {
@@ -25,7 +25,7 @@ import getResult from "api/getResult";
 import getItemFollowTime from 'api/getItemFollowTime';
 
 
-function Dashboard() {
+function Dashboard2() {
 
   // const [data, setData] = useState();
   const [cateArr, setCateArr] = useState([]);
@@ -35,26 +35,12 @@ function Dashboard() {
   const [store, setStore] = useState([1]);
   const [item, setItem] = useState([1]);
 
-
   const fetchData = () => {
     console.log('fetch');
-    // return getData(store, startDate, endDate).then(data => {
-    //   const cate = data.map(d => d.item).filter((e, i, arr) => {
-    //     return arr.indexOf(e) === i
-    //   })
-    //   console.log(data.map(d => d.item));
-    //   setCateArr(cate);
-    //   return getResult();
-    // }).then(result => {
-    //   setDataArr(result.map(d => d.sales_sum).filter(e => e !== null))
-    //   console.log('done');
-    // }).catch(err => {
-    //   alert(err.message);
-    // })
     getItemFollowTime(store, startDate, endDate, item).then(result => {
       result = result.filter(e => e.sales !== null);
       console.log(result);
-      setCateArr(result.map(d => d.date));
+      setCateArr(result.map(d => new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(new Date(d.date))));
       setDataArr(result.map(d => d.sales));
     }).catch(err => {
         alert(err.message);
@@ -69,30 +55,6 @@ function Dashboard() {
       <Container fluid>
         <Row>
           <Col lg="3" sm="3">
-            {/* <Card className="card-stats"> 
-              <Card.Body>
-                <Row>
-                  <Col xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-chart text-warning"></i>
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Number</p>
-                      <Card.Title as="h4">150GB</Card.Title>
-                    </div>
-                  </Col>
-                </Row>
-              </Card.Body>
-              <Card.Footer>
-                <hr></hr>
-                <div className="stats">
-                  <i className="fas fa-redo mr-1"></i>
-                  Update Now
-                </div>
-              </Card.Footer>
-            </Card> */}
             <FormGroup controlId="date" bsSize="large">
               <label>Select Start Date</label>
               <FormControl
@@ -115,7 +77,7 @@ function Dashboard() {
           <Col lg="2" sm="2">
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Select Store</Form.Label>
-            <Form.Control as="select" value={store} onChange={e => setStore(e.target.value)}>
+            <Form.Control as="select" value={store} onChange={e => {setStore(e.target.value); console.log(typeof(store))}}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -130,9 +92,9 @@ function Dashboard() {
           </Form.Group>
           </Col>
           <Col lg="2" sm="2">
-          <Form.Group controlId="exampleForm.ControlSelect1">
+          <Form.Group controlId="exampleForm.ControlSelect2">
             <Form.Label>Select Item</Form.Label>
-            <Form.Control as="select" value={item} onChange={e => setItem(e.target.value)}>
+            <Form.Control as="select" value={item} onChange={e => {setItem(e.target.value); console.log((item))}}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -272,4 +234,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Dashboard2;
