@@ -174,8 +174,15 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Email Statistics</Card.Title>
-                <p className="card-category">Last Campaign Performance</p>
+                <Card.Title as="h4">
+                Total sales: ...
+                </Card.Title>
+                <Card.Title as="h4">
+                Best sold item: 1 with ... items
+                </Card.Title>
+                <Card.Title as="h4">
+                Worst sold item: 1 with ... items
+                </Card.Title>
               </Card.Header>
               <Card.Body>
                 {/* <div
