@@ -32,6 +32,9 @@ function Dashboard() {
   const [startDate, setStartDate] = useState(['2018-01-01']);
   const [endDate, setEndDate] = useState(['2018-01-09']);
   const [store, setStore] = useState([1]);
+  const [maxItem, setMaxItem] = useState(0);
+  const [minItem, setMinItem] = useState(0);
+  const [total, setTotal] = useState([0]);
 
 
   const fetchData = () => {
@@ -54,14 +57,37 @@ function Dashboard() {
       console.log(result);
       setCateArr(result.map(d => d.id));
       setDataArr(result.map(d => d.sales_sum));
+      const max = []
+      const [sum, minIt, maxIt] = result.reduce(([sum_, min_, max_], d) => {
+        sum_ += d.sales_sum;
+        if (min_ === null || max_ === null) {
+            min_ = d;
+            max_ = d;
+        } else {
+            if (d.sales_sum < min_.sales_sum) {
+                min_ = d;
+            }
+            if (d.sales_sum > max.sales_sum) {
+                max_ = d;
+            }
+        }
+        return [sum_, min_, max_]
+      }, [0, null, null]);
+      console.log([sum, minIt, maxIt])
+      setTotal(sum);
+      setMinItem(minIt);
+      setMaxItem(maxIt);
+
     }).catch(err => {
         alert(err.message);
     });
+
   }
   useEffect(async () => {
     fetchData();
   }, []);
-  
+
+
   return (
     <>
       <Container fluid>
@@ -175,13 +201,13 @@ function Dashboard() {
             <Card>
               <Card.Header>
                 <Card.Title as="h4">
-                Total sales: ...
+                Total sales: {total}
                 </Card.Title>
                 <Card.Title as="h4">
-                Best sold item: 1 with ... items
+                Best sold item: {maxItem.id} with {maxItem.sales_sum} items
                 </Card.Title>
                 <Card.Title as="h4">
-                Worst sold item: 1 with ... items
+                Worst sold item: {minItem.id} with {minItem.sales_sum} items
                 </Card.Title>
               </Card.Header>
               <Card.Body>
