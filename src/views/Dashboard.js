@@ -57,6 +57,7 @@ function Dashboard() {
       console.log(result);
       setCateArr(result.map(d => d.id));
       setDataArr(result.map(d => d.sales_sum));
+      console.log(typeof(dataArr))
       const max = []
       const [sum, minIt, maxIt] = result.reduce(([sum_, min_, max_], d) => {
         sum_ += d.sales_sum;
@@ -77,7 +78,6 @@ function Dashboard() {
       setTotal(sum);
       setMinItem(minIt);
       setMaxItem(maxIt);
-
     }).catch(err => {
         alert(err.message);
     });
