@@ -59,6 +59,7 @@ function Dashboard() {
       setData(result);
       setCateArr(result.map(d => d.id));
       setDataArr(result.map(d => d.sales_sum));
+      console.log(store)
       const max = []
       const [sum, minIt, maxIt] = result.reduce(([sum_, min_, max_], d) => {
         sum_ += d.sales_sum;
@@ -75,11 +76,10 @@ function Dashboard() {
         }
         return [sum_, min_, max_]
       }, [0, null, null]);
-      console.log([sum, minIt, maxIt])
+      // console.log([sum, minIt, maxIt])
       setTotal(sum);
       setMinItem(minIt);
       setMaxItem(maxIt);
-
     }).catch(err => {
         alert(err.message);
     });
@@ -141,7 +141,7 @@ function Dashboard() {
           <Col lg="2" sm="2">
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Select Store</Form.Label>
-            <Form.Control as="select" value={store} onChange={e => setStore(e.target.value)}>
+            <Form.Control as="select" value={store} onChange={e => {setStore(e.target.value); console.log(e.target.value);}}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
