@@ -67,8 +67,8 @@ class LineGraph extends Component {
       //     <div className="mixed-chart">
         <div style={{overflow:'auto'}}>
             <Chart
-              height ={420}
-              width={this.props.categories.length * 50}
+            height ={650}
+              // width={this.props.categories.length * 50}
               options={{
                 chart: {
                   id: "basic-bar"
@@ -87,12 +87,9 @@ class LineGraph extends Component {
                 {
                   name: "Sales: ",
                   data: this.props.data
-                  // data: [30, 40, 45, 50, 49, 60, 70, 91, 13, 28, 30, 40, 45, 50, 49, 60, 70, 91, 13, 28, 30, 40, 45, 50, 49, 60, 70, 91, 13, 28, 30, 40, 45, 50, 49, 60, 70, 91, 13, 28, 30, 40, 45, 50, 49, 60, 70, 91, 13, 28]
                 }
               ]}
               type="line"
-              // width="760"
-              // height="360"
               style={{marginLeft:"10px"}}
             />
       </div>

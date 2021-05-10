@@ -163,7 +163,7 @@ function Dashboard2() {
         {/* endRow
         Chart */}
         <Row>
-          <Col md="9">
+          <Col md="12">
             <Card>
               <Card.Header>
                 <Card.Title as="h4">Store's Name</Card.Title>
@@ -193,7 +193,7 @@ function Dashboard2() {
               </Card.Footer> */}
             </Card>
           </Col>
-          <Col md="3">
+          {/* <Col md="3">
             <Card>
               <Card.Header>
                 <Card.Title as="h4">
@@ -225,9 +225,9 @@ function Dashboard2() {
                   <i className="far fa-clock"></i>
                   Campaign sent 2 days ago
                 </div> */}
-              </Card.Body>
+              {/* </Card.Body>
             </Card>
-          </Col>
+          </Col>  */}
         </Row>
       </Container>
     </>
