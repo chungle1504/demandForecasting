@@ -27,6 +27,7 @@ import getResult from "api/getResult";
 function Dashboard() {
 
   // const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [cateArr, setCateArr] = useState([]);
   const [dataArr, setDataArr] = useState([]);
   const [startDate, setStartDate] = useState(['2018-01-01']);
@@ -55,6 +56,7 @@ function Dashboard() {
     getData(store, startDate, endDate).then(result => {
       result = result.filter(e => e.sales_sum !== null);
       console.log(result);
+      setData(result);
       setCateArr(result.map(d => d.id));
       setDataArr(result.map(d => d.sales_sum));
       const max = []
@@ -67,7 +69,7 @@ function Dashboard() {
             if (d.sales_sum < min_.sales_sum) {
                 min_ = d;
             }
-            if (d.sales_sum > max.sales_sum) {
+            if (d.sales_sum > max_.sales_sum) {
                 max_ = d;
             }
         }
@@ -203,11 +205,26 @@ function Dashboard() {
                 <Card.Title as="h4">
                 Total sales: {total}
                 </Card.Title>
-                <Card.Title as="h5">
-                Best sold item: 1 with ... items
+                <Card.Title as="h4">
+                {/* Best sold item: {maxItem.id} with {maxItem.sales_sum} items */}
+                Best sold item: {data.map(item => {
+                  var str = "";
+                  if(item.sales_sum == maxItem.sales_sum){
+                    str = str + " " + item.id;
+                    // console.log(str);
+                  }
+                  return str;
+                })} with {maxItem.sales_sum} items
                 </Card.Title>
-                <Card.Title as="h5">
-                Worst sold item: 1 with ... items
+                <Card.Title as="h4">
+                Worst sold item: {data.map(item => {
+                  var str = "";
+                  if(item.sales_sum == minItem.sales_sum){
+                    str = str + " " + item.id;
+                    // console.log(str);
+                  }
+                  return str;
+                })} with {minItem.sales_sum} items
                 </Card.Title>
               </Card.Header>
               <Card.Body>
