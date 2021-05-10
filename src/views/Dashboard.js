@@ -177,10 +177,10 @@ function Dashboard() {
                 <Card.Title as="h4">
                 Total sales: ...
                 </Card.Title>
-                <Card.Title as="h4">
+                <Card.Title as="h5">
                 Best sold item: 1 with ... items
                 </Card.Title>
-                <Card.Title as="h4">
+                <Card.Title as="h5">
                 Worst sold item: 1 with ... items
                 </Card.Title>
               </Card.Header>
